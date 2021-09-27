@@ -13,12 +13,16 @@
 <body>
 <h1 id="page-heading"><span><i class="far fa-address-book"></i></span> Contact List  </h1> 
 <div  id="container">
-    <ul>
+    <ul>           
+        
         <% for(let i of contact_list){ %>
-            <li class="tab">
+
+            <li id="tab">
+                <span id="delete-button"><a href="/delete-contact/?phone=<%= i.phone %>"><i id="delete-button" class="far fa-trash-alt"></i></a></span>
+
                 <p id="name"><span><i class="far fa-address-card"></i></span><%= i.name %> </p>
                 <p id="number"><span><i class="fas fa-mobile"></i></span><%=  i.phone %> </p>
-            </li>
+            </li> 
       <%  }  %> 
     </ul>
 
@@ -27,7 +31,7 @@
 
     <input type="text" name="name" placeholder="Enter Name" required>
     <input type="number" name="phone" placeholder="Enter Number" required>
-    <button type="submit">Add Contact</button>
+    <button type="submit"><i class="fas fa-user-plus"></i></button>
 </form>
 </div>
    <script type="text/javascript" src="/js/home.js"></script> 

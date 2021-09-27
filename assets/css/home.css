@@ -55,5 +55,14 @@ button{
     font-size: 18px;
     background-color: #bcb8b1;
     padding: 5px;
-    margin: 10px;
+
+    
+}
+#delete-button{
+    float: right;
+    color: black;
+}
+#tab{
+    display: flexbox;
+    justify-content: space-evenly;
 }

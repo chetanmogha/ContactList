@@ -39,6 +39,15 @@ app.post("/create-contact",(req,res)=>{
     res.redirect('/');
 })
 
+app.get("/delete-contact/",(req,res)=>{
+    const phone=req.query.phone;
+    const contactIndex=contactList.findIndex(contact => contact.phone==phone);
+    if(contactIndex!=-1){
+        contactList.splice(contactIndex,1);
+    }
+    res.redirect("back");
+})
+
 app.listen(port, function(err){
     if (err) {
         console.log("Error in running the server", err);
